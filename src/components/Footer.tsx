@@ -9,18 +9,21 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} ACHA K. EXCEL. All rights reserved.
         </p>
         <div className="flex items-center space-x-2">
-          {socialsData.map(({ href, label, icon }) => (
-          <Link
-            key={label}
-            href={href}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-            className="p-2 rounded-md transition-colors hover:bg-gray-400 hover:text-black"
-          >
-            {icon}
-            <span className="sr-only">{'label'}</span>
-          </Link>
-          ))}
+          {socialsData.map(({ href, label, icon }) => {
+            const Icon = icon;
+            return (
+              <Link
+                key={label}
+                href={href}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+                className="p-2 rounded-md transition-colors hover:bg-gray-400 hover:text-black"
+              >
+                <Icon />
+                <span className="sr-only">{label}</span>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </footer>
