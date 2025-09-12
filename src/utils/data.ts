@@ -60,12 +60,12 @@ export const navLinks: NavLink[] = [
 ];
 
 export const generateData = [
-  { name: 'Image', desc: 'Generates images with custom styles', icon: '', new: true },
-  { name: 'Video', desc: '', icon: 'Generates Videos with  Runway Luma and more', new: true },
-  { name: 'RealTime', desc: 'RealTime AI rendering on a canvas', icon: '', new: true },
-  { name: 'Enhancer', desc: 'Upscale and enchance images and videos up to 2k', icon: '', new: false },
-  { name: 'Edit', desc: 'Add objects changes styles or', icon: '', new: true },
-  { name: 'VideoLipsync', desc: 'Lip sync my video', icon: '', new: true },
-  { name: 'Motion Enhancer', desc: 'Transfer motion to images and animate characters', icon: '', new: false },
-  { name: 'Train', desc: '', icon: 'Teach Kres ai to recognies your style, produce or characters', new: false },
+  { name: 'Image', desc: 'Generates images with custom styles in flux and ideogram.', icon: '', new: true },
+  { name: 'Video', desc: '', icon: 'Generates Videos with Halius pics, Runway Luma and more.', new: true },
+  { name: 'RealTime', desc: 'RealTime AI rendering on a canvas. Instant feedback loops.', icon: '', new: true },
+  { name: 'Enhancer', desc: 'Upscale and enchance images and videos up to 22k.', icon: '', new: false },
+  { name: 'Edit', desc: 'Add objects, changes styles or expand photos and generators.', icon: '', new: true },
+  { name: 'VideoLipsync', desc: 'Lip sync any video to any audio.', icon: '', new: true },
+  { name: 'Motion Enhancer', desc: 'Transfer motion to images and animate characters.', icon: '', new: false },
+  { name: 'Train', desc: '', icon: 'Teach Kres ai to replicate your style, products or characters.', new: false },
 ]
