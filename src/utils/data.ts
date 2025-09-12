@@ -16,7 +16,7 @@ interface NavLink {
   icon: IconType;
 }
 
-export const navItems: NavLink[]= [
+export const navItems: NavLink[] = [
   { href: "/gallery", name: "Gallery", icon: FaPhotoFilm },
   { href: "/support", name: "Support", icon: FaHeadset },
 
@@ -59,11 +59,13 @@ export const navLinks: NavLink[] = [
   { name: "Folder", href: "/folder", icon: FaFolder },
 ];
 
-export const generateData =[
-  {name:'Image',desc:'',icon:</>,new:true},
-  {name:'Video',desc:'',icon:'',new:true},
-  {name:'RealTime',desc:'',icon:'',new:true},
-  {name:'Edit',desc:'',icon:'',new:true},
-  {name:'VideoLipsynnc',desc:'',icon:'',new:true},
-  {name:'Motion Train',desc:'',icon:'',new:true},
+export const generateData = [
+  { name: 'Image', desc: 'Generates images with custom styles', icon: '', new: true },
+  { name: 'Video', desc: '', icon: 'Generates Videos with  Runway Luma and more', new: true },
+  { name: 'RealTime', desc: 'RealTime AI rendering on a canvas', icon: '', new: true },
+  { name: 'Enhancer', desc: 'Upscale and enchance images and videos up to 2k', icon: '', new: false },
+  { name: 'Edit', desc: 'Add objects changes styles or', icon: '', new: true },
+  { name: 'VideoLipsync', desc: 'Lip sync my video', icon: '', new: true },
+  { name: 'Motion Enhancer', desc: 'Transfer motion to images and animate characters', icon: '', new: false },
+  { name: 'Train', desc: '', icon: 'Teach Kres ai to recognies your style, produce or characters', new: false },
 ]
