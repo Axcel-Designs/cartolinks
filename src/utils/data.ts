@@ -1,6 +1,5 @@
-import React, { ReactElement } from "react";
 import { IconType } from "react-icons";
-import { FaBalanceScale, FaBrush, FaCamera, FaFolder, FaHome } from "react-icons/fa";
+import { FaBalanceScale, FaBrush, FaCamera, FaFolder, FaHome, FaHeadset } from "react-icons/fa";
 import { FaPhotoFilm, FaWandMagic } from "react-icons/fa6";
 import { LuGithub, LuLinkedin, LuMail, LuTwitter } from "react-icons/lu";
 
@@ -16,6 +15,12 @@ interface NavLink {
   href: string;
   icon: IconType;
 }
+
+export const navItems: NavLink[]= [
+  { href: "/gallery", name: "Gallery", icon: FaPhotoFilm },
+  { href: "/support", name: "Support", icon: FaHeadset },
+
+];
 
 export const socialsData: SocialLink[] = [
   {
@@ -46,10 +51,19 @@ export const socialsData: SocialLink[] = [
 
 export const navLinks: NavLink[] = [
   { name: "Home", href: "/", icon: FaHome },
-  { name: "Gallery", href: "/gallery", icon: FaPhotoFilm  },
+  { name: "Gallery", href: "/gallery", icon: FaPhotoFilm },
   { name: "Camera", href: "/camera", icon: FaCamera },
   { name: "Brush", href: "/brush", icon: FaBrush },
   { name: "Magicwand", href: "/magicwand", icon: FaWandMagic },
-  { name: "Balance", href: "/balance", icon: FaBalanceScale},
+  { name: "Balance", href: "/balance", icon: FaBalanceScale },
   { name: "Folder", href: "/folder", icon: FaFolder },
 ];
+
+export const generateData =[
+  {name:'Image',desc:'',icon:</>,new:true},
+  {name:'Video',desc:'',icon:'',new:true},
+  {name:'RealTime',desc:'',icon:'',new:true},
+  {name:'Edit',desc:'',icon:'',new:true},
+  {name:'VideoLipsynnc',desc:'',icon:'',new:true},
+  {name:'Motion Train',desc:'',icon:'',new:true},
+]

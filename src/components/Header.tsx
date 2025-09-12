@@ -1,67 +1,96 @@
 "use client";
 import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaAngleDown, FaBars, FaBell, FaCircle, FaSun, FaTimes } from "react-icons/fa";
 import useShow from "@/hooks/showHook";
-import { navLinks } from "@/utils/data";
+import { navItems, navLinks } from "@/utils/data";
 import { usePathname } from "next/navigation";
+import krea from '../../public/kreawhite.png'
+import Image from "next/image";
 
-const navItems = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
-];
 
 function Navbar() {
-  return navItems.map((item, i) => (
-    <Link href={item.href} key={i}>
-      {item.label}
-    </Link>
-  ));
+  return navItems.map(({ href, name, icon }, i) => {
+    const Icon = icon
+    return (
+      <Link href={href} key={i} className="flex items-center gap-2 bg-gray-200 w-fit py-1 px-2 rounded-lg">
+        <Icon />
+        {name}
+      </Link>
+    )
+  })
+}
+function Menu() {
+  const path = usePathname();
+  return navLinks.map(({ icon, name, href }) => {
+    const Icon = icon
+    return (
+      <Link href={href} key={name} className={`${href === path ? 'bg-white' : ''} py-2 px-4 rounded-xl`}>
+        <Icon />
+      </Link>
+    )
+  })
+
 }
 
 export default function Header() {
   const { isShow, tggleActive } = useShow();
-  const path = usePathname();
 
   return (
     <>
-      <section className="shadow/20 shadow-gray-600 sticky top-0">
+      <section className="sticky top-0">
         <header className="flex justify-between items-center py-2 px-2">
-          <div>
-
+          <div className="flex items-center">
+            <nav
+              onClick={tggleActive}
+              className="lg:hidden flex gap-2 p-3 text-2xl hover:bg-gray-100 rounded-xl cursor-pointer"
+            >
+              {isShow ? <FaTimes /> : <FaBars />}
+            </nav>
+            <div className="max-lg:hidden flex">
+              <Image src={krea} alt="krea logo" width={30} />
+            </div>
+            <div>
+              <div className="w-fit py-1 px-2 rounded-lg max-lg:hidden flex items-center gap-1 justify-center">
+                <FaCircle className="text-xl text-red-300" />
+                <p>Hellooooo</p>
+                <FaAngleDown />
+              </div>
+            </div>
           </div>
-          <div className="flex gap-[8px] bg-gray-200 p-[6px] rounded-[16px]">
-            {navLinks.map(({ icon, name, href }) => {
-              const Icon = icon
-              return (
-                <Link href={href} key={name} className={`${href === path ? 'bg-white' : ''} py-[8px] px-[16px] rounded-2xl`}>
-                  <Icon className="text-[20px]" />
-                </Link>
-              )
-            })}
-
+          <div className="hidden lg:flex gap-2 bg-gray-200 p-2 rounded-xl">
+            <Menu />
           </div>
-          <nav className="hidden md:flex justify-around gap-3 p-4">
+          <nav className="flex justify-end items-center gap-2 p-4 text-black">
             <Navbar />
+            <div className="bg-gray-200 w-fit py-1 px-2 rounded-lg cursor-pointer">
+              <FaBell className="text-xl" />
+            </div>
+            <div className="bg-gray-200 w-fit py-1 px-2 rounded-lg cursor-pointer">
+              <FaSun className="text-xl" />
+            </div>
+            <div className="bg-gray-200 w-fit py-1 px-2 rounded-lg cursor-pointer">
+              <FaCircle className="text-xl text-red-300" />
+            </div>
           </nav>
-          <nav
+          {/* <nav
             onClick={tggleActive}
-            className="md:hidden flex gap-3 p-4 text-2xl hover:bg-gray-100 rounded-xl"
+            className="lg:hidden flex gap-3 p-4 text-2xl hover:bg-gray-100 rounded-xl"
           >
             {isShow ? <FaTimes /> : <FaBars />}
-          </nav>
+          </nav> */}
         </header>
         {isShow && (
           <nav
             onClick={tggleActive}
-            className="flex flex-col justify-center gap-3 p-4 transition"
+            className="hidden fixed top-15 max-lg:flex flex-col w-fit justify-start items-center gap-2 transition bg-gray-200 p-[6px] rounded-2xl h-screen"
           >
-            <Navbar />
+            <Menu />
+            <div>
+              <Image src={krea} alt="krea logo" width={30} />
+            </div>
           </nav>
         )}
-      </section>
+        </section>
     </>
   );
 }
