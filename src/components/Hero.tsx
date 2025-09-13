@@ -1,10 +1,10 @@
 'use client'
 import { carouselData } from '@/utils/data';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
- 
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselData.length);
@@ -12,7 +12,7 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleDotClick = (index:number) => {
+  const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
   return (
