@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <>
-      <section className="sticky top-0">
+      <section className="sticky top-0 bg-white/95 z-50">
         <header className="flex justify-between items-center py-2 px-2">
           <div className="flex items-center">
             <nav

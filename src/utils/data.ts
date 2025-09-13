@@ -13,11 +13,10 @@ interface SocialLink {
 }
 interface GenerateType {
   name: string;
-  href: string;
-  label: string;
-  color: string;
   icon: IconType;
-  new: boolean
+  desc: string;
+  color: string;
+  isNew: boolean
 }
 
 interface NavLink {
@@ -49,61 +48,61 @@ export const navLinks: NavLink[] = [
   { name: "Folder", href: "/folder", icon: FaFolder },
 ];
 
-export const generateData = [
+export const generateData: GenerateType[] = [
   {
     name: 'Image',
     icon: FaImage,
     desc: 'Generates images with custom styles in flux and ideogram.',
-    new: true,
-    color: 'text-pink-500'
+    isNew: true,
+    color: 'bg-linear-to-b bg-pink-600 to-gray-100 text-white'
   },
   {
     name: 'Video',
     icon: FaVideo,
     desc: 'Generates Videos with Halius pics, Runway Luma and more.',
-    new: true,
-    color: 'text-red-500'
+    isNew: true,
+    color: 'bg-linear-to-b bg-red-600 to-gray-100 text-white'
   },
   {
     name: 'RealTime',
     icon: GiHeavyTimer,
     desc: 'RealTime AI rendering on a canvas. Instant feedback loops.',
-    new: true,
-    color: 'text-green-500'
+    isNew: true,
+    color: 'bg-linear-to-b bg-green-600 to-gray-100 text-white'
   },
   {
     name: 'Enhancer',
     icon: FaMagic,
     desc: 'Upscale and enchance images and videos up to 22k.',
-    new: false,
-    color: 'text-purple-500'
+    isNew: false,
+    color: 'bg-linear-to-b bg-purple-600 to-gray-100 text-white'
   },
   {
     name: 'Edit',
     icon: FaEdit,
     desc: 'Add objects, changes styles or expand photos and generators.',
-    new: true,
-    color: 'text-blue-500'
+    isNew: true,
+    color: 'bg-linear-to-b from-blue-600 to-gray-100 text-white'
   },
   {
     name: 'VideoLipsync',
     icon: FaMicrophone,
     desc: 'Lip sync any video to any audio.',
-    new: true,
-    color: 'text-yellow-500'
+    isNew: true,
+    color: 'bg-linear-to-b bg-yellow-600 to-gray-100 text-white'
   },
   {
     name: 'Motion Transfer',
     icon: MdTransferWithinAStation,
     desc: 'Transfer motion to images and animate characters.',
-    new: false,
-    color: 'text-indigo-500'
+    isNew: false,
+    color: 'bg-linear-to-b bg-indigo-600 to-gray-100 text-white'
   },
   {
     name: 'Train',
     icon: FaTrain,
     desc: 'Teach Kres ai to replicate your style, products or characters.',
-    new: false,
-    color: 'text-emerald-500'
+    isNew: false,
+    color: 'bg-linear-to-b bg-emerald-600 to-gray-100 text-white'
   },
 ]
