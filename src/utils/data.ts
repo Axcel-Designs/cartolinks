@@ -1,41 +1,14 @@
-import { IconType } from "react-icons";
 import { FaBalanceScale, FaBrush, FaCamera, FaFolder, FaHome, FaHeadset, FaImage, FaVideo, FaEdit, FaMicrophone, FaMagic, FaTrain } from "react-icons/fa";
 import { FaPhotoFilm, FaWandMagic } from "react-icons/fa6";
-import { LuGithub, LuLinkedin, LuMail, LuTwitter } from "react-icons/lu";
 import { MdTransferWithinAStation } from "react-icons/md";
 import { GiHeavyTimer } from "react-icons/gi";
+import { CarouselType, GenerateType, NavLink } from "@/types/dataTypes";
 
-interface SocialLink {
-  name: string;
-  href: string;
-  label: string;
-  icon: IconType;
-}
-interface GenerateType {
-  name: string;
-  icon: IconType;
-  desc: string;
-  color: string;
-  isNew: boolean
-}
-
-interface NavLink {
-  name: string;
-  href: string;
-  icon: IconType;
-}
 
 export const navItems: NavLink[] = [
   { href: "/gallery", name: "Gallery", icon: FaPhotoFilm },
   { href: "/support", name: "Support", icon: FaHeadset },
 
-];
-
-export const socialsData: SocialLink[] = [
-  { name: "Axcel-Designs", href: "https://github.com/Axcel-Designs",label: "GitHub",icon: LuGithub,},
-  {name: "excel-acha",href: "https://linkedin.com/in/excel-acha",label: "LinkedIn", icon: LuLinkedin, },
-  {name: "axceldesigns@gmail.com",href: "mailto:axceldesigns@gmail.com",label: "Email",icon: LuMail,},
-  { name: "@axceldesigns", href: "https://x.com/axceldesigns",label: "X (formerly Twitter)",icon: LuTwitter,},
 ];
 
 export const navLinks: NavLink[] = [
@@ -46,6 +19,25 @@ export const navLinks: NavLink[] = [
   { name: "Magicwand", href: "/magicwand", icon: FaWandMagic },
   { name: "Balance", href: "/balance", icon: FaBalanceScale },
   { name: "Folder", href: "/folder", icon: FaFolder },
+];
+
+export const carouselData: CarouselType[] = [
+  {
+    title: 'WAN 2.2',
+    subtitle: 'NEW IMAGE MODEL',
+    desc: 'Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional prompt coherence and ultra realistic textures.',
+    buttonText: 'Try WAN 2.2',
+    image: 'https://placehold.co/1280x720/2d2d2f/d6e0e0?text=WAN+2.2+Image+Generation',
+    alt: 'WAN 2.2 Image generation'
+  },
+  {
+    title: 'Open\nSource',
+    subtitle: 'OPEN SOURCE MODEL',
+    desc: "We're making the weights to our FLUX1 Krea model open source. Download and run our model weights, read the technical report, or generate with it in Krea Image.",
+    buttonText: null,
+    image: 'https://placehold.co/1280x720/191e25/d6e0e0?text=Open+Source+Model',
+    alt: 'Open Source Model'
+  }
 ];
 
 export const generateData: GenerateType[] = [

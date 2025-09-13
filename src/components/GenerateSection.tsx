@@ -3,12 +3,12 @@ import { FaAngleDown } from "react-icons/fa";
 
 export default function GenerateSection() {
   return (
-    <section className="container mx-auto">
-      <div className="flex justify-between items-center mt-4 px-4">
+    <section className="mx-auto px-4">
+      <div className="flex justify-between items-center my-4 ">
         <p className="font-semibold">Generate</p>
         <div className="flex justify-between items-center gap-1 text-blue-500 font-semibold"><FaAngleDown /><p>Show all</p></div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols lg:grid-cols-4 flex-wrap gap-5 justify-between p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols lg:grid-cols-4 flex-wrap gap-5 justify-between max-md:px-8">
         {generateData.map(({ name, icon, desc, color, isNew }) => {
           const Icon = icon
           return (
@@ -24,11 +24,9 @@ export default function GenerateSection() {
                   <p className="text-xs">{desc}</p>
                 </div>
               </div>
-              <button className="bg-gray-200 rounded-xl py-1 p-4">Open</button>
+              <button className="bg-gray-200 rounded-xl py-1 px-2 max-sm:px-4">Open</button>
             </div>
-
           )
-
         })}
       </div>
     </section>

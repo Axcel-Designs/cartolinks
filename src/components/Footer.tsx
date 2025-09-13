@@ -1,31 +1,14 @@
-import Link from "next/link";
-import { socialsData } from "../utils/data";
+import Image from "next/image";
+import img from '../../public/krea.png'
 
 export default function Footer() {
   return (
-    <footer className="border-t text-gray-400">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-        <p className="text-sm">
-          &copy; {new Date().getFullYear()} ACHA K. EXCEL. All rights reserved.
-        </p>
-        <div className="flex items-center space-x-2">
-          {socialsData.map(({ href, label, icon }) => {
-            const Icon = icon;
-            return (
-              <Link
-                key={label}
-                href={href}
-                target={"_blank"}
-                rel={"noopener noreferrer"}
-                className="p-2 rounded-md transition-colors hover:bg-gray-400 hover:text-black"
-              >
-                <Icon />
-                <span className="sr-only">{label}</span>
-              </Link>
-            )
-          })}
-        </div>
+    <footer className="mt-16 flex flex-col sm:flex-row items-center justify-between bg-gray-800 text-gray-100 p-4">
+      <div className="flex items-center space-x-2 mb-4 sm:mb-0">
+        <Image src={img} width={50} height={50} alt="kea image"/>
+        <span className="font-bold text-lg">Krea AI</span>
       </div>
+      <p className="text-xs">curated by <span className="font-semibold text-2xl">Mobbin</span></p>
     </footer>
   )
 }
