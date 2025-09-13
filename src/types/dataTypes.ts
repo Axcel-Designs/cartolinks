@@ -1,4 +1,5 @@
 import { IconType } from "react-icons";
+import { StaticImageData } from "next/image";
 
 export interface NavLink {
   name: string;
@@ -11,8 +12,7 @@ export interface CarouselType {
   subtitle: string,
   desc: string,
   buttonText: string | null,
-  image: string,
-  alt: string,
+  image: StaticImageData,
 }
 
 export interface GenerateType {

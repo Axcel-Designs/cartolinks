@@ -3,6 +3,11 @@ import { FaPhotoFilm, FaWandMagic } from "react-icons/fa6";
 import { MdTransferWithinAStation } from "react-icons/md";
 import { GiHeavyTimer } from "react-icons/gi";
 import { CarouselType, GenerateType, NavLink } from "@/types/dataTypes";
+import wan from '@/assets/wan.png'
+// import wan from '../../public/krea.png'
+import source from '@/assets/source.png'
+// import source from '../../public/kreawhite.png'
+
 
 
 export const navItems: NavLink[] = [
@@ -24,19 +29,17 @@ export const navLinks: NavLink[] = [
 export const carouselData: CarouselType[] = [
   {
     title: 'WAN 2.2',
-    subtitle: 'NEW IMAGE MODEL',
+    subtitle: 'WAN 2.2 Image generation',
     desc: 'Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional prompt coherence and ultra realistic textures.',
     buttonText: 'Try WAN 2.2',
-    image: 'https://placehold.co/1280x720/2d2d2f/d6e0e0?text=WAN+2.2+Image+Generation',
-    alt: 'WAN 2.2 Image generation'
+    image: wan,
   },
   {
-    title: 'Open\nSource',
-    subtitle: 'OPEN SOURCE MODEL',
+    title: 'Open Source',
+    subtitle: 'FLUX.1 Krea',
     desc: "We're making the weights to our FLUX1 Krea model open source. Download and run our model weights, read the technical report, or generate with it in Krea Image.",
     buttonText: null,
-    image: 'https://placehold.co/1280x720/191e25/d6e0e0?text=Open+Source+Model',
-    alt: 'Open Source Model'
+    image: source,
   }
 ];
 
