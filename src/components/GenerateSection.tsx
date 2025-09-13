@@ -3,7 +3,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 export default function GenerateSection() {
   return (
-    <section className="mx-auto px-4">
+    <section className="mx-auto px-4 dark:bg-gray-800 dark:text-gray-100">
       <div className="flex justify-between items-center my-4 ">
         <p className="font-semibold">Generate</p>
         <div className="flex justify-between items-center gap-1 text-blue-500 font-semibold"><FaAngleDown /><p>Show all</p></div>
@@ -24,7 +24,7 @@ export default function GenerateSection() {
                   <p className="text-xs">{desc}</p>
                 </div>
               </div>
-              <button className="bg-gray-200 rounded-xl py-1 px-2 max-sm:px-4">Open</button>
+              <button className="bg-gray-200 dark:bg-gray-700  rounded-xl py-1 px-2 max-sm:px-4">Open</button>
             </div>
           )
         })}

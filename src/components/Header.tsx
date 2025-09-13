@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-import { FaAngleDown, FaBars, FaBell, FaCircle, FaSun, FaTimes } from "react-icons/fa";
+import { FaAngleDown, FaBars, FaBell, FaCircle, FaMoon, FaSun, FaTimes } from "react-icons/fa";
 import useShow from "@/hooks/showHook";
 import { navItems, navLinks } from "@/utils/data";
 import { usePathname } from "next/navigation";
 import krea from '../../public/kreawhite.png'
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 
 function Navbar() {
@@ -24,7 +25,7 @@ function Menu() {
   return navLinks.map(({ icon, name, href }) => {
     const Icon = icon
     return (
-      <Link href={href} key={name} className={`${href === path ? 'bg-white' : ''} py-2 px-4 rounded-xl`}>
+      <Link href={href} key={name} className={`${href === path ? "bg-white dark:bg-gray-800" : ""} py-2 px-4 rounded-xl`}>
         <Icon />
       </Link>
     )
@@ -34,10 +35,22 @@ function Menu() {
 
 export default function Header() {
   const { isShow, tggleActive } = useShow();
+  const [dark, setDark] = useState<boolean>(false)
+
+  function tggleDark() {
+    setDark(!dark)
+  }
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [dark]);
 
   return (
     <>
-      <section className="sticky top-0 bg-white/95 z-50">
+      <section className="sticky top-0 bg-white/95 z-50 dark:bg-gray-700/90 dark:text-gray-100">
         <header className="flex justify-between items-center py-2 px-2">
           <div className="flex items-center">
             <nav
@@ -57,7 +70,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className="hidden lg:flex gap-2 bg-gray-200 p-2 rounded-xl">
+          <div className="hidden lg:flex gap-2 bg-gray-200 dark:bg-gray-500 p-2 rounded-xl">
             <Menu />
           </div>
           <nav className="flex justify-end items-center gap-2 p-4 text-black">
@@ -65,8 +78,12 @@ export default function Header() {
             <div className="bg-gray-200 w-fit py-1 px-2 rounded-lg cursor-pointer">
               <FaBell className="text-xl" />
             </div>
-            <div className="bg-gray-200 w-fit py-1 px-2 rounded-lg cursor-pointer">
-              <FaSun className="text-xl" />
+            <div onClick={tggleDark} className="bg-gray-200 w-fit py-1 px-2 rounded-lg cursor-pointer">
+              {!dark ?
+                <FaMoon className="text-xl" />
+                :
+                <FaSun className="text-xl" />
+              }
             </div>
             <div className="bg-gray-200 w-fit py-1 px-2 rounded-lg cursor-pointer">
               <FaCircle className="text-xl text-red-300" />
@@ -82,7 +99,7 @@ export default function Header() {
         {isShow && (
           <nav
             onClick={tggleActive}
-            className="hidden fixed top-15 max-lg:flex flex-col w-fit justify-start items-center gap-2 transition bg-gray-200 p-[6px] rounded-2xl h-screen"
+            className="hidden fixed top-15 max-lg:flex flex-col w-fit justify-start items-center gap-2 transition bg-gray-200 dark:bg-gray-500 p-[6px] rounded-2xl h-screen"
           >
             <Menu />
             <div>
@@ -90,7 +107,7 @@ export default function Header() {
             </div>
           </nav>
         )}
-        </section>
+      </section >
     </>
   );
 }
