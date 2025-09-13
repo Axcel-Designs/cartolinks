@@ -82,7 +82,7 @@ export default function Header() {
               {!dark ?
                 <FaMoon className="text-xl" />
                 :
-                <FaSun className="text-xl" />
+                <FaSun className="text-xl text-yellow-600" />
               }
             </div>
             <div className="bg-gray-200 w-fit py-1 px-2 rounded-lg cursor-pointer">
